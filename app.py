@@ -34,4 +34,4 @@ def predict():
         return jsonify({'prediction': f"Error: {str(e)}"})
 
 if _name_ == '_main_':
-    app.run(debug=True)gi
+    app.run(debug=True)
