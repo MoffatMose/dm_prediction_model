@@ -55,12 +55,6 @@ def predict():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-# Run the app using Waitress for production
+# Run the app
 if __name__ == '__main__':
-    try:
-        from waitress import serve
-        print("Starting production server with Waitress...")
-        serve(app, host='0.0.0.0', port=5000)
-    except ImportError:
-        print("Waitress not installed, using Flask development server.")
-        app.run(debug=True, use_reloader=False)
+    app.run(debug=True, use_reloader=False)
